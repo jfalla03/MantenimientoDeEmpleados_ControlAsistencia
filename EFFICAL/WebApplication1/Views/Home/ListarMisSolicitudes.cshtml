@@ -1,0 +1,32 @@
+﻿@model List<WebApplication1.Models.SolicitudesJustificacion>
+@{
+
+    
+}
+<link rel="stylesheet" href="/css/home/listarmissolicitudes.css">
+
+<h1>Mis Solicitudes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Motivo</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var solicitud in Model)
+        {
+            <tr>
+                <td>@solicitud.CodEmpleado</td>
+                <td>@solicitud.Motivo</td>
+                <td>@solicitud.FechaSolicitud</td>
+                <td>@solicitud.Estado</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<button type="button" class="btn btn-secondary" onclick="history.back()">Volver a Solicitud</button>

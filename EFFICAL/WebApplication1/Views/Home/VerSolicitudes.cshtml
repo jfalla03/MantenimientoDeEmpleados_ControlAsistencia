@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WebApplication1.Models.SolicitudesJustificacion>
+
+@{
+   
+}
+
+<h1>VerSolicitudes</h1>
+<link rel="stylesheet" href="/css/home/versolicitudes.css">
+
+<p>
+    <form asp-action="Index">
+        <button type="submit" class="btn btn-secondary">Volver</button>
+    </form>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                CódigoSolicitud
+            </th>
+            <th>
+                CódigoEmpleado
+            </th>
+            <th>
+                Motivo
+            </th>
+            <th>
+                Fecha
+            </th>
+            <th>
+                Evidencia
+            </th>
+            <th>
+                Estado
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodSolicitud)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Motivo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaSolicitud)
+            </td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.RutaImagen))
+                {
+                        <img src="/imagenes/@item.RutaImagen" alt="Imagen de Sueldo" width="100">
+                    }
+            </td>
+
+                <td>
+                        @if (item.Estado == "Pendiente")
+                        {
+                        <a href="@Url.Action("Aprobar", new { cod = item.CodSolicitud })" class="btn btn-success">Aprobar</a>
+                        <a href="@Url.Action("Rechazar", new { cod = item.CodSolicitud })" class="btn btn-danger">Rechazar</a>
+                        }
+                        else
+                        {
+                            @item.Estado
+                        }
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

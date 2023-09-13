@@ -1,0 +1,58 @@
+﻿/* Estilos generales */
+body {
+    background-color: #f8f9fa; /* Color de fondo ligeramente gris */
+    color: #333; /* Texto negro */
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #007BFF; /* Color celeste para el título principal */
+}
+
+/* Estilos para los enlaces */
+a {
+    color: #007BFF; /* Color celeste para los enlaces */
+    text-decoration: none; /* Eliminar subrayado */
+}
+
+    a:hover {
+        text-decoration: underline; /* Subrayado al pasar el mouse */
+    }
+
+/* Estilos para el botón de volver */
+.btn-secondary {
+    background-color: #ccc; /* Fondo gris para el botón secundario */
+    color: #333; /* Texto negro */
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+    .btn-secondary:hover {
+        background-color: #999; /* Cambio de color al pasar el mouse */
+    }
+
+/* Estilos para la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Espacio entre el título y la tabla */
+}
+
+    .table th,
+    .table td {
+        border: 1px solid #ccc; /* Borde gris para las celdas */
+        padding: 10px;
+        text-align: left;
+    }
+
+    .table th {
+        background-color: #f0f0f0; /* Fondo gris claro para las cabeceras */
+        font-weight: bold;
+    }
+
+    /* Estilos para las celdas de datos */
+    .table tbody tr:hover {
+        background-color: #f0f8ff; /* Cambio de color al pasar el mouse */
+    }

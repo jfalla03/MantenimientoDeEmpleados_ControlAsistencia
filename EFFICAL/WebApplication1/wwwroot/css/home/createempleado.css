@@ -1,0 +1,65 @@
+﻿/* Estilos para el título */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilos para el contenedor del formulario */
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta esto según tus necesidades */
+}
+
+/* Estilos para el formulario */
+.col-md-4 {
+    width: 400px; /* Ajusta el ancho del formulario según tus necesidades */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label.control-label {
+    font-weight: bold;
+}
+
+input.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+/* Estilos para la validación de errores */
+.text-danger {
+    color: red;
+}
+
+/* Estilos para el mensaje de éxito */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+}

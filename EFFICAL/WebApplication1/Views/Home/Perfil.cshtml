@@ -1,0 +1,123 @@
+﻿@model WebApplication1.Models.Empleado
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home/perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Perfil</title>
+    <style>
+        /* CSS for Profile Page */
+        body {
+            background-color: #f6f6f6;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: linear-gradient(to right, #f43b47, #453a94);
+            color: #fff;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+            padding: 30px 0;
+        }
+
+        .card-title {
+            margin-bottom: 0;
+            font-size: 28px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .profile-details h2 {
+            margin-bottom: 20px;
+        }
+
+        .profile-details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+            .profile-details ul li {
+                margin-bottom: 10px;
+            }
+
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .centered-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Additional styles for icons */
+        .fa {
+            margin-right: 8px;
+        }
+
+        /* Add your other custom styles here */
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card profile">
+                    <div class="card-header profile-header">
+                        <!-- Add header content here if needed -->
+                    </div>
+                    <div class="card-body profile-details">
+                        <h2><i class="fas fa-user"></i> Información Personal</h2>
+                        <ul>
+                            <li><i class="fas fa-id-badge"></i> Código Empleado: @Html.DisplayFor(model => model.CodEmpleado)</li>
+                            <li><i class="fas fa-user"></i> Nombre: @Html.DisplayFor(model => model.NomEmpleado)</li>
+                            <li><i class="fas fa-user"></i> Apellido: @Html.DisplayFor(model => model.ApeEmpleado)</li>
+                            <li><i class="far fa-id-card"></i> DNI: @Html.DisplayFor(model => model.DniEmpleado)</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Dirección: @Html.DisplayFor(model => model.DirecMpleado)</li>
+                            <li><i class="fas fa-phone"></i> Teléfono: @Html.DisplayFor(model => model.TeleEmpleado)</li>
+                            <li><i class="fas fa-envelope"></i> Email: @Html.DisplayFor(model => model.EmailEmpleado)</li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+                <div class="buttons-container">
+                    @using (Html.BeginForm("ActualizarContraseña", "Home", FormMethod.Post, new { id = "actualizarContrasenaForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <button type="submit" class="btn btn-primary centered-button"><i class="fas fa-key"></i> Actualizar Contraseña</button>
+                    }
+                    <br>
+                    <form asp-action="Index">
+                        <button type="submit" class="btn btn-secondary centered-button"><i class="fas fa-arrow-left"></i> Volver</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

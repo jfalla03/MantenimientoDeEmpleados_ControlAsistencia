@@ -1,0 +1,91 @@
+﻿/* Estilos generales */
+body {
+    background-color: #f8f9fa; /* Color de fondo ligeramente gris */
+    color: #333; /* Texto negro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el perfil */
+.profile {
+    background-color: #fff; /* Fondo blanco para el perfil */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    margin: 20px auto;
+    max-width: 600px; /* Ancho máximo del perfil */
+    padding: 20px;
+    text-align: center;
+}
+
+    .profile img {
+        border-radius: 50%; /* Forma circular para la foto de perfil */
+        max-width: 150px; /* Tamaño máximo de la foto de perfil */
+    }
+
+    .profile h1 {
+        color: #007BFF; /* Color celeste para el nombre */
+        margin-top: 10px;
+    }
+
+    .profile p {
+        font-weight: bold;
+    }
+
+/* Estilos para los detalles del perfil */
+.profile-details h2 {
+    color: #007BFF; /* Color celeste para el título */
+    margin-top: 20px;
+}
+
+.profile-details ul {
+    list-style: none; /* Elimina los marcadores de lista */
+    padding: 0;
+    margin: 0;
+}
+
+    .profile-details ul li {
+        margin-bottom: 10px; /* Espacio entre elementos de la lista */
+    }
+
+/* Estilos para los botones */
+.buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #007BFF; /* Color celeste para el botón primario */
+    color: #fff; /* Texto blanco */
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3; /* Cambio de color al pasar el mouse */
+    }
+
+.btn-secondary {
+    background-color: #ccc; /* Fondo gris para el botón secundario */
+    color: #333; /* Texto negro */
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+    .btn-secondary:hover {
+        background-color: #999; /* Cambio de color al pasar el mouse */
+    }
+
+.buttons-container {
+    text-align: center;
+    margin-top: 20px; /* Espacio superior para separar de la información personal */
+}
+
+.centered-button {
+    margin-top: 10px; /* Espacio superior entre los botones */
+}

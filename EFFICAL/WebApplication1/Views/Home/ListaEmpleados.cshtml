@@ -1,0 +1,76 @@
+﻿@model IEnumerable<WebApplication1.Models.Empleado>
+
+@{
+    
+}
+
+<link rel="stylesheet" href="/css/home/listaempleado.css">
+
+<h1>Lista de Empleados</h1>
+
+<p>
+    <a asp-action="CreateEmpleado">Crear Nuevo Empleado</a>
+</p>
+<div>
+    <form asp-action="Index">
+        <button type="submit" class="btn btn-secondary">Volver</button>
+    </form>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                CÓdigo Empleado
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Apellido
+            </th>
+            <th>
+                DNI
+            </th>
+            <th>
+                Dirección
+            </th>
+            <th>
+                Teléfono
+            </th>
+            <th>
+                Email
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApeEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DniEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DirecMpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeleEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailEmpleado)
+            </td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = item.CodEmpleado })" class="btn btn-primary">Editar</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

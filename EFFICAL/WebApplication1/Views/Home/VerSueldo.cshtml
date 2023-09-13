@@ -1,0 +1,108 @@
+﻿@model WebApplication1.Models.SueldoEmpleado
+@{
+   
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home/versueldo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Ver Sueldo</title>
+    <style>
+        /* CSS for Ver Sueldo Page */
+        body {
+            background-color: #f6f6f6;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .sueldo-details {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sueldo-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .sueldo-list dt {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .sueldo-list dd {
+            margin-left: 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(to right, #f43b47, #453a94);
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-secondary:hover {
+                background: linear-gradient(to right, #453a94, #f43b47);
+            }
+
+        /* Additional styles for icons */
+        .fa {
+            margin-right: 8px;
+        }
+
+        /* Add your other custom styles here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="sueldo-title"><i class="fas fa-file-invoice-dollar"></i> Ver Sueldo</h1>
+
+        <div class="sueldo-details">
+            <h4><i class="fas fa-money-bill"></i> Sueldo del Empleado</h4>
+            <hr />
+            <dl class="sueldo-list">
+                <dt><i class="fas fa-id-card"></i> Id:</dt>
+                <dd>@Html.DisplayFor(model => model.Id)</dd>
+
+                <dt><i class="fas fa-id-badge"></i> Código Empleado:</dt>
+                <dd>@Html.DisplayFor(model => model.CodEmpleado)</dd>
+
+                <dt><i class="fas fa-dollar-sign"></i> Monto:</dt>
+                <dd>@Html.DisplayFor(model => model.Monto)</dd>
+
+                <dt><i class="far fa-calendar-alt"></i> Periodo:</dt>
+                <dd>@Html.DisplayFor(model => model.Periodo)</dd>
+
+                <dt><i class="far fa-calendar-alt"></i> Fecha:</dt>
+                <dd>@Html.DisplayFor(model => model.FechaPago)</dd>
+
+                <dt><i class="fas fa-percentage"></i> Impuesto:</dt>
+                <dd>@Html.DisplayFor(model => model.Impuestos)</dd>
+
+                <dt><i class="fas fa-comment-alt"></i> Comentario:</dt>
+                <dd>@Html.DisplayFor(model => model.Comentarios)</dd>
+            </dl>
+        </div>
+
+        <div class="text-center">
+            <form asp-action="Index">
+                <button type="submit" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Volver</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

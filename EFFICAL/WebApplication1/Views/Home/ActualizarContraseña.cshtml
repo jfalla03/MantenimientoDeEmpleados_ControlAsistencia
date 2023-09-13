@@ -1,0 +1,30 @@
+﻿@{
+
+    Layout = null;
+}
+<link rel="stylesheet" href="/css/home/actualizarcontraseña.css">
+
+<h2>Actualizar Contraseña</h2>
+
+<form asp-action="ActualizarContraseña" method="post">
+    <div class="form-group">
+        <label for="contraseñaActual">Contraseña Actual</label>
+        <input type="password" class="form-control" id="contraseñaActual" name="contraseñaActual" required>
+
+    </div>
+    <div class="form-group">
+        <label for="nuevaContraseña">Nueva Contraseña</label>
+        <input type="password" class="form-control" id="nuevaContraseña" name="nuevaContraseña" required>
+    </div>
+    <div class="form-group">
+        <label for="confirmarContraseña">Confirmar Contraseña</label>
+        <input type="password" class="form-control" id="confirmarContraseña" name="confirmarContraseña" required>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar Contraseña</button>
+</form>
+<div>
+    <form asp-action="Perfil">
+        <button type="submit" class="btn btn-secondary">Volver</button>
+    </form>
+</div> 

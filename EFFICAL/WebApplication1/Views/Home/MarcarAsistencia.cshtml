@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+
+</head>
+<link rel="stylesheet" href="/css/home/marcarasistencia.css">
+<body>
+    <form method="post" action="@Url.Action("MarcarAsistencia", "Home")" autocomplete="off">
+        <input type="hidden" name="codEmpleado" value="@ViewBag.CodEmpleado" />
+        <button type="submit" name="tipoMarcacion" value="Entrada">Marcar Hora de Entrada</button>
+        <button type="submit" name="tipoMarcacion" value="InicioDescanso">Marcar Inicio de Descanso</button>
+        <button type="submit" name="tipoMarcacion" value="FinDescanso">Marcar Fin de Descanso</button>
+        <button type="submit" name="tipoMarcacion" value="Salida">Marcar Hora de Salida</button>
+    </form>
+    <br/>
+    <form asp-action="Index">
+        <button type="submit" class="btn btn-warning" style="background-color: #16a085">Volver a la Lista</button>
+    </form>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modalText">@TempData["Mensaje"]</p>
+            
+            <p id="modalTime">Hora y Fecha: <span id="horaFecha"></span></p>
+            <button id="btnAceptar" onclick="closeModal()">Aceptar</button>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var mensaje = "@TempData["Mensaje"]";
+
+        // Función para cerrar la ventana emergente
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Mostrar la ventana emergente al cargar el DOM completamente
+        document.addEventListener("DOMContentLoaded", function () {
+            if (mensaje !== "") {
+                modal.style.display = "block";
+                mostrarHora();
+            }
+        });
+
+        // Función para mostrar la hora actual en la ventana emergente
+        function mostrarHora() {
+            var horaFechaElement = document.getElementById("horaFecha");
+            var currentTime = new Date();
+            var formattedTime = currentTime.toLocaleTimeString() + " - " + currentTime.toLocaleDateString();
+            horaFechaElement.innerHTML = formattedTime;
+        }
+    </script>
+</body>
+</html>

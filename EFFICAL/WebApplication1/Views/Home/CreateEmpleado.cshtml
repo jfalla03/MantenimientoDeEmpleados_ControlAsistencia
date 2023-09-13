@@ -1,0 +1,75 @@
+﻿@model WebApplication1.Models.Empleado
+
+@{
+  
+}
+
+<link rel="stylesheet" href="/css/home/createempleado.css">
+
+@if (!string.IsNullOrEmpty(ViewBag.Mensaje))
+{
+    <div class="alert alert-success">
+        @ViewBag.Mensaje
+    </div>
+}
+
+<h1>Crear Empleado</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateEmpleado">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CodEmpleado" class="control-label"></label>
+                <input asp-for="CodEmpleado" class="form-control" />
+                <span asp-validation-for="CodEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomEmpleado" class="control-label"></label>
+                <input asp-for="NomEmpleado" class="form-control" />
+                <span asp-validation-for="NomEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApeEmpleado" class="control-label"></label>
+                <input asp-for="ApeEmpleado" class="form-control" />
+                <span asp-validation-for="ApeEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DniEmpleado" class="control-label"></label>
+                <input asp-for="DniEmpleado" class="form-control" />
+                <span asp-validation-for="DniEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirecMpleado" class="control-label"></label>
+                <input asp-for="DirecMpleado" class="form-control" />
+                <span asp-validation-for="DirecMpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeleEmpleado" class="control-label"></label>
+                <input asp-for="TeleEmpleado" class="form-control" />
+                <span asp-validation-for="TeleEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailEmpleado" class="control-label"></label>
+                <input asp-for="EmailEmpleado" class="form-control" />
+                <span asp-validation-for="EmailEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreUsuario" class="control-label"></label>
+                <input asp-for="NombreUsuario" class="form-control" />
+                <span asp-validation-for="NombreUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" onclick="confirmacion()">Guardar cambios</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function confirmacion() {
+        if (window.confirm("Empleado creado correctamente)) {
+                window.location.href = "/Home/Index";
+    }
+        }
+</script>

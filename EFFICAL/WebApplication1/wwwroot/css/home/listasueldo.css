@@ -1,0 +1,91 @@
+﻿/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f3f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Estilos de la tabla */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border: 1px solid #d1d9e6;
+}
+
+    .table th,
+    .table td {
+        padding: 12px;
+        vertical-align: middle;
+        border-top: 1px solid #d1d9e6;
+    }
+
+    .table thead th {
+        vertical-align: middle;
+        border-bottom: 2px solid #d1d9e6;
+        background-color: #f0f3f8;
+        font-weight: bold;
+    }
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f5f7fa;
+}
+
+/* Icono */
+.fa-money-check-alt {
+    font-size: 36px;
+    color: #17a2b8;
+    margin-right: 10px;
+}
+
+/* Botón de estilos */
+.btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: #ffffff;
+}
+
+    .btn-primary:hover {
+        background-color: #117a8b;
+        border-color: #117a8b;
+    }
+
+/* Responsive */
+@media (max-width: 576px) {
+    .container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .table th,
+    .table td {
+        padding: 10px;
+    }
+
+    .fa-money-check-alt {
+        font-size: 28px;
+    }
+}

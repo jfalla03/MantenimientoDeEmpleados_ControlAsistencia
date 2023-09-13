@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebApplication1.Models.SueldoEmpleado>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de Sueldos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/home/listasueldo.css">
+    <!-- No es necesario cargar el archivo de estilo listaSueldo.cshtml aquí -->
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center"><i class="fas fa-money-check-alt"></i> Lista de Sueldos</h1>
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-id-card"></i> Id</th>
+                    <th><i class="fas fa-user"></i> Código empleado</th>
+                    <th><i class="fas fa-money-bill-wave"></i> Monto</th>
+                    <th><i class="fas fa-calendar-alt"></i> Periodo</th>
+                    <th><i class="fas fa-calendar-day"></i> Fecha</th>
+                    <th><i class="fas fa-percent"></i> Impuestos</th>
+                    <th><i class="fas fa-comment"></i> Comentarios</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CodEmpleado)</td>
+                        <td>$@Html.DisplayFor(modelItem => item.Monto)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Periodo)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FechaPago)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Impuestos)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Comentarios)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
